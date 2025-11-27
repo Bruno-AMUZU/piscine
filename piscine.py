@@ -16,7 +16,8 @@ while commande != 'exit':
         a = input("Qui nage ? ")
         b = input("quelle nage ? ")
         c = input("combien de longueur ? ")
-        liste.append((a,b,c))
+        d = input("Quel jour ? YY_MM_DD")
+        liste.append((a,b,c,d))
    
     if commande == 'liste':
         for elt in liste:
@@ -29,7 +30,7 @@ while commande != 'exit':
                 print(f"Prénom:{elt[0]}")
 
     if commande == 'nageur':
-        d = input("Qui?")
+        na = input("Qui?")
         for elt in liste:
-            if elt[0] == d:
+            if elt[0] == na:
                 print(f"Nage: {elt[1]}")
