@@ -24,4 +24,4 @@ while commande != 'exit':
             print("fin")
 
         #test
-        #test 2
+        #new test
