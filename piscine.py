@@ -7,7 +7,7 @@ print("--- Gestionnaire d'utilisateurs d'une piscine ---")
 
 liste = []
 commande = ''
-
+# boucle principale
 while commande != 'exit':
     commande = input("Que faut-il faire ? ")
 
@@ -21,4 +21,4 @@ while commande != 'exit':
         for elt in liste:
             print(f"Prénom {elt[0]}, nage {elt[1]}, longueur {elt[2]}")
 
-# test 
+# Fin du programme
