@@ -34,3 +34,9 @@ while commande != 'exit':
         for elt in liste:
             if elt[0] == na:
                 print(f"Nage: {elt[1]}")
+
+    if commande == 'date':
+        da=input("Quelle date?")
+        for elt in list:
+            if elt[3] == da:
+                print(f"Prénom {elt[0]},nage {elt[1]},")
