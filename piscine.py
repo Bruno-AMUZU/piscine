@@ -20,8 +20,8 @@ while commande != 'exit':
         liste.append((personne,nage,longueur,date))
    
     if commande == 'liste':
-        for elt in liste:
-            print(f"Prénom {elt[0]}, nage {elt[1]}, longueur {elt[2]},Date {elt[3]}")
+        for personne, nage, longueur, date in liste:
+            print(f"Prénom {personne}, nage {nage}, longueur {longueur},Date {date}")
 
     if commande == 'nage':
         n=input("Quelle nage ?")
