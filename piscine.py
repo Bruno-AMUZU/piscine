@@ -13,11 +13,11 @@ while commande != 'exit':
     commande = input("Que faut-il faire ? ")
 
     if commande == 'ajout':
-        a = input("Qui nage ? ")
-        b = input("quelle nage ? ")
-        c = input("combien de longueur ? ")
-        d = input("Quel jour ? YY_MM_DD")
-        liste.append((a,b,c,d))
+        personne = input("Qui nage ? ")
+        nage = input("quelle nage ? ")
+        longueur = input("combien de longueur ? ")
+        date = input("Quel jour ? YY_MM_DD")
+        liste.append((personne,nage,longueur,date))
    
     if commande == 'liste':
         for elt in liste:
