@@ -45,3 +45,13 @@ while commande != 'exit':
         for personne, nage, longueur, date in list:
             if date == da:
                 print(f"Prénom {personne},nage {nage},longueur {longueur}")
+
+    if commande == 'save':
+        nom_fichier = 'utilisateur.txt'
+        
+        for elt in liste:
+            with open(nom_fichier, 'w') as f:
+                    for mon_tuple in liste:
+                        donnees_a_ecrire = str(mon_tuple)
+                        f.write(donnees_a_ecrire)
+            print(f"✅ Tuple sauvegardé dans le fichier '{nom_fichier}'.")
