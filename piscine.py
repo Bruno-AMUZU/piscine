@@ -8,14 +8,14 @@ print("--- Gestionnaire d'utilisateurs d'une piscine ---")
 
 liste_nageurs = ["Pierre", "Léa", "Michel"]
 
-liste_nages = []
+liste_nages = ["brasse","crawl","Dos"]
 
-liste_bdd = [(1,"brasse",15,"25-11-24"),
-        (0,"brasse",9,"25-11-24"),
-        (2,"crawl",8,"25-11-26"),
-        (1,"crawl",10,"25-11-25"),
-        (0,"Dos",9,"25-11-26"),
-        (2,"Brasse",9,"25-11-26")]
+liste_bdd = [(1,"0",15,"25-11-24"),
+        (0,"0",9,"25-11-24"),
+        (2,"1",8,"25-11-26"),
+        (1,"1",10,"25-11-25"),
+        (0,"2",9,"25-11-26"),
+        (2,"0",9,"25-11-26")]
 commande = ''
 
 nom_fichier = 'utilisateur.txt'
