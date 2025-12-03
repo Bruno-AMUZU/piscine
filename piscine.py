@@ -58,7 +58,7 @@ while commande != 'exit':
 
     if commande == 'load':
         with open(nom_fichier, 'r', encoding='utf-8') as fichier:
-            for ligne in nom_fichier:
+            for ligne in fichier:
                 ligne = ligne.strip()
                 
                 if ligne:
