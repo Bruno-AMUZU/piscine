@@ -14,6 +14,8 @@ liste = [("Léa","brasse",15,"25-11-24"),
         ("Michel","Brasse",9,"25-11-26")]
 commande = ''
 
+nom_fichier = 'utilisateur.txt'
+
 while commande != 'exit':
     commande = input("Que faut-il faire ? ")
 
@@ -47,8 +49,7 @@ while commande != 'exit':
                 print(f"Prénom {personne},nage {nage},longueur {longueur}")
 
     if commande == 'save':
-        nom_fichier = 'utilisateur.txt'
-        
+  
         for elt in liste:
             with open(nom_fichier, 'w',  encoding='utf-8') as f:
                     for personne, nage, longueur, date in liste:
