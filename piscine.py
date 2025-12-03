@@ -39,7 +39,9 @@ while commande != 'exit':
             print(f"Prénom {liste_nageurs[personne]}, nage {liste_nages[nage]}, longueur {longueur},Date {date}")
 
     if commande == 'nage':
-        n=input("Quelle nage ?")
+        for id, nage in enumerate(liste_nages):
+            print(f"{id}->{nage}")
+        n=int(input("Quelle nage ?"))
         for personne, nage, longueur, date in liste_bdd:
             if nage == n:
                 print(f"Prénom {liste_nageurs[personne]},longueur {longueur},Date {date}")
