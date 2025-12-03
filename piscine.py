@@ -50,7 +50,7 @@ while commande != 'exit':
         nom_fichier = 'utilisateur.txt'
         
         for elt in liste:
-            with open(nom_fichier, 'w') as f:
+            with open(nom_fichier, 'w',  encoding='utf-8') as f:
                     for personne, nage, longueur, date in liste:
                         f.write(f"{personne},{nage},{longueur},{date}\n")
             print(f"Liste sauvegardée dans le fichier '{nom_fichier}'.")
