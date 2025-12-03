@@ -53,7 +53,7 @@ while commande != 'exit':
             with open(nom_fichier, 'w',  encoding='utf-8') as f:
                     for personne, nage, longueur, date in liste:
                         f.write(f"{personne},{nage},{longueur},{date}\n")
-            print(f"Liste sauvegardée dans le fichier '{nom_fichier}'.")
+        print(f"Liste sauvegardée ! dans '{nom_fichier}'.")
 
     if commande == 'load':
         with open(nom_fichier, 'r', encoding='utf-8') as fichier:
