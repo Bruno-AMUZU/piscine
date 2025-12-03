@@ -24,12 +24,13 @@ while commande != 'exit':
     commande = input("Que faut-il faire ? ")
 
     if commande == 'ajout':
+        print("Nageurs:")
         for id, nageur in enumerate(liste_nageurs):
-            print(f"{id}->{nageur}")
-        personne = int(input("Qui nage ? "))
+            print(f"{id+1}->{nageur}")
+        personne = int(input("Quel nageur est concerné ? ")) - 1
         for id, nage in enumerate(liste_nages):
-            print(f"{id}->{nage}")
-        nage = int(input("quelle nage ? "))
+            print(f"{id+1}->{nage}")
+        nage = int(input("quelle nage ? "))- 1
         longueur = input("combien de longueur ? ")
         date = input("Quel jour ? YY_MM_DD")
         liste_bdd.append((personne,nage,longueur,date))
@@ -39,17 +40,19 @@ while commande != 'exit':
             print(f"Prénom {liste_nageurs[personne]}, nage {liste_nages[nage]}, longueur {longueur},Date {date}")
 
     if commande == 'nage':
+        print("Nages:")
         for id, nage in enumerate(liste_nages):
-            print(f"{id}->{nage}")
-        n=int(input("Quelle nage ?"))
+            print(f"{id+1}->{nage}")
+        n=int(input("Quelle nage est concernée ? ")) - 1
         for personne, nage, longueur, date in liste_bdd:
             if nage == n:
                 print(f"Prénom {liste_nageurs[personne]},longueur {longueur},Date {date}")
 
     if commande == 'nageur':
+        print("Nageurs:")
         for id, nageur in enumerate(liste_nageurs):
-            print(f"{id}->{nageur}")
-        na = int(input("Qui?"))
+            print(f"{id+1}->{nageur}")
+        na = int(input("Quel nageur est concerné ? ")) - 1
         for personne, nage, longueur, date in liste_bdd:
             if personne == na:
                 print(f"Nage {liste_nages[nage]},longueur {longueur},Date {date}")
