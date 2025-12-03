@@ -32,7 +32,7 @@ while commande != 'exit':
    
     if commande == 'liste':
         for personne, nage, longueur, date in liste_bdd:
-            print(f"Prénom {liste_nageurs[personne]}, nage {nage}, longueur {longueur},Date {date}")
+            print(f"Prénom {liste_nageurs[personne]}, nage {liste_nages[nage]}, longueur {longueur},Date {date}")
 
     if commande == 'nage':
         n=input("Quelle nage ?")
@@ -44,20 +44,20 @@ while commande != 'exit':
         na = input("Qui?")
         for personne, nage, longueur, date in liste_bdd:
             if personne == na:
-                print(f"Nage {nage},longueur {longueur},Date {date}")
+                print(f"Nage {liste_nages[nage]},longueur {longueur},Date {date}")
 
     if commande == 'date':
         da=input("Quelle date?")
         for personne, nage, longueur, date in liste_bdd:
             if date == da:
-                print(f"Prénom {liste_nageurs[personne]},nage {nage},longueur {longueur}")
+                print(f"Prénom {liste_nageurs[personne]},nage {liste_nages[nage]},longueur {longueur}")
 
     if commande == 'save':
   
         for elt in liste_bdd:
             with open(nom_fichier, 'w',  encoding='utf-8') as f:
                     for personne, nage, longueur, date in liste_bdd:
-                        f.write(f"{liste_nageurs[personne]},{nage},{longueur},{date}\n")
+                        f.write(f"{liste_nageurs[personne]},{liste_nages[nage]},{longueur},{date}\n")
         print(f"Liste sauvegardée ! dans '{nom_fichier}'.")
 
     if commande == 'load':
