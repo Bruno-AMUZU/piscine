@@ -64,11 +64,16 @@ while commande != 'exit':
                 print(f"Prénom {liste_nageurs[personne]},nage {liste_nages[nage]},longueur {longueur}")
 
     if commande == 'save':
-  
-        for elt in liste_bdd:
-            with open(nom_fichier, 'w',  encoding='utf-8') as f:
-                    for personne, nage, longueur, date in liste_bdd:
-                        f.write(f"{liste_nageurs[personne]},{liste_nages[nage]},{longueur},{date}\n")
+        with open(nom_fichier, 'w',  encoding='utf-8') as f:
+                f.write("@nageurs\n")
+                for id, nom in enumerate(liste_nageurs):
+                    f.write(f"{id}, {nom}\n")
+                f.write("@nages\n")
+                for id, nom in enumerate(liste_nages):
+                    f.write(f"{id}, {nom}\n")
+                f.write("@table")
+                for personne, nage, longueur, date in liste_bdd:
+                    f.write(f"{liste_nageurs[personne]},{liste_nages[nage]},{longueur},{date}\n")
         print(f"Liste sauvegardée ! dans '{nom_fichier}'.")
 
     if commande == 'load':
