@@ -78,15 +78,26 @@ while commande != 'exit':
 
     if commande == 'load':
         liste_bdd.clear()
+        liste_nages.clear()
+        liste_nageurs.clear()
+        l = liste_nageurs  # initialisation ne sert aps de suite
         with open(nom_fichier, 'r', encoding='utf-8') as fichier:
-            for ligne in fichier:
-                ligne = ligne.strip()
-                
-                if ligne:
-                    valeurs = [v.strip() for v in ligne.split(',')]
-                    
-                    prenom, nom, longueur_str, date = valeurs
-                    longueur = int(longueur_str) 
-                    
-                    print(f"Prénom: {prenom}, Nom: {nom}, Longueur: {longueur}, Date: {date}")
-                    liste_bdd.append((prenom,nom,longueur,date))
+            for line in fichier:
+                if line[0]=='@':
+                    if line[1:]=='nage':
+                        # j'ai découvert que je lis la table des nages
+                        l = liste_nages
+                    if line[1:]=='nageurs':
+                        # j'ai découvert que je lis la table des nages
+                        l = liste_nageurs
+                    if line[1:]=='table':
+                        # j'ai découvert que je lis la table des nages
+                        l = liste_bdd
+                else:
+                    valeurs = [v.strip() for v in line.split(',')]
+                    if l == liste_nages:
+                        liste_nages.append(valeurs[1])
+                    if l == liste_nageurs:
+                        liste_nages.append(valeurs[1])
+                    if l == liste_bdd:
+                        liste_nages.append((valeurs[0],valeurs[1],valeurs[2],valeurs[3]) )
